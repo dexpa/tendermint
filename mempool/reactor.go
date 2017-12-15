@@ -27,11 +27,11 @@ const (
 type MempoolReactor struct {
 	p2p.BaseReactor
 	config  *cfg.MempoolConfig
-	Mempool *Mempool
+	Mempool *OrderedMempool
 }
 
 // NewMempoolReactor returns a new MempoolReactor with the given config and mempool.
-func NewMempoolReactor(config *cfg.MempoolConfig, mempool *Mempool) *MempoolReactor {
+func NewMempoolReactor(config *cfg.MempoolConfig, mempool *OrderedMempool) *MempoolReactor {
 	memR := &MempoolReactor{
 		config:  config,
 		Mempool: mempool,
